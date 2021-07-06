@@ -44,7 +44,7 @@ ggplot(london_crime_long_summarised, aes(x = date, y = count, colour = major_cat
   ggtitle("Crimes in London") +
   theme(
     plot.title = element_text(hjust = 0.5),
-    plot.background = element_rect(fill = "#F5F4EF", color = NA),
+    plot.background = element_rect(fill = "#f6f4f2", color = NA),
     legend.position = "none",
     legend.title = element_blank(),
     axis.title.x = element_blank(),
@@ -76,7 +76,7 @@ ggplot(london_crime_long_summarised_sub %>% filter(major_category != "Miscellane
   ggtitle("Types of Crimes in London") +
   theme(
     plot.title = element_text(hjust = 0.5),
-    plot.background = element_rect(fill = "#F5F4EF", color = NA),
+    plot.background = element_rect(fill = "#f6f4f2", color = NA),
     legend.position = "none",
     legend.title = element_blank(),
     axis.title.x = element_blank(),
@@ -114,15 +114,14 @@ ggplot(crime_boroughs, aes(x = date)) +
   geom_line(aes(y = theft, colour = "Theft")) +
   geom_line(aes(y = violence_against_the_person, colour = "Violence against people")) +
   scale_x_date(date_breaks = "6 months", date_labels = "%m/%Y") +
-  scale_color_manual(values = c("#3D85F7", "#C32E5A")) +
+  scale_color_manual(values = c("#c66570", "#192439")) +
   scale_fill_manual(values = c(lighten("#3D85F7"), lighten("#C32E5A"), "grey60"), labels = c("more theft", "more violence", "same")) +
   facet_geo(vars(name), grid = "gb_london_boroughs_grid") +
   ggtitle("Theft and Violence against people, London (2019 - 2021)") +
   theme(
     plot.title = element_text(hjust = 0.5),
     legend.position = c(0.875, 0.975),
-    legend.box.background = element_rect(fill = "ivory1"),
-    plot.background = element_rect(fill = "ivory1", color = NA),
+    plot.background = element_rect(fill = "#f6f4f2", color = NA),
     strip.text = element_text(face = "bold", color = "grey20"),
     plot.margin = margin(20, 30, 20, 30),
     # plot.title = element_text(margin = margin(0, 0, -100, 0), size = 26, family = "KyivType Sans", face = "bold", vjust = 0, color = "grey25"),
